@@ -1,4 +1,6 @@
+import { nanoid } from 'nanoid';
 import noteTmp from '../../templates/notes.hbs';
+import summaryTmp from '../../templates/summary.hbs';
 import refs from './refs';
 import { CATEGORIES, STATUS, SVG_ICONS } from './constants';
 
@@ -9,7 +11,19 @@ export function createActiveNotesTable(notes) {
     refs.activeNotesTable.insertAdjacentHTML('beforeend', notesList);
 }
 
-export function addCategoryIcons () { 
+export function addIcons() {
+    addCategoryIcons();
+    addCtrButtonsIcons();
+}
+
+export function createSummaryTable(notes) {
+    const summary = getSummary(notes);
+    const summaryList = summaryTmp(summary);
+
+    refs.summaryTable.insertAdjacentHTML('beforeend', summaryList);
+}
+
+function addCategoryIcons () { 
     const categoryIcons = refs.getCategoryIcons();
     
     categoryIcons.forEach(icon => {
@@ -20,7 +34,7 @@ export function addCategoryIcons () {
     });
 }
 
-export function addCtrButtonsIcons() { 
+function addCtrButtonsIcons() { 
     const buttons = refs.getNoteCtrlButtons();
 
     buttons.forEach(button => { 
@@ -43,4 +57,19 @@ export function addCtrButtonsIcons() {
         
         button.innerHTML = iconToAdd;
     });
+}
+
+function getSummary(notes) {
+    return notes.reduce((summary, { category, status }) => {
+        const entity = summary.find(item => item.category === category);
+
+        if (entity) { 
+            entity[status] += 1;
+            return summary;
+        }
+
+        summary.push({ id: nanoid(7), category, [status]: 1 });
+
+        return summary;
+    }, []);
 }

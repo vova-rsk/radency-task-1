@@ -1,0 +1,24 @@
+{{#each this}}
+      <tr class="table__row">
+        <th>
+          <div class="table__col-thumb table__col-thumb--icon">
+            <div class="table__icon" data-category="{{category}}"></div>
+          </div>
+        </th>
+        <th>
+          <div class="table__col-thumb table__col-thumb--note-category">
+            {{category}}
+          </div>
+          </th>
+        <th>
+          <div class="table__col-thumb table__col-thumb--active">
+            {{active}}
+          </div>
+        </th>
+        <th>
+          <div class="table__col-thumb table__col-thumb--last table__col-thumb--archived">
+            {{archived}}
+          </div>
+        </th>
+      </tr>
+{{/each}}
