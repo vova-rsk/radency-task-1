@@ -2,10 +2,7 @@
     <tr>
         <th>
           <div class="table__thumb table__thumb--name">
-            <div class="table__icon">
-              <svg width="30px" height="30px">
-                <use href="./src/images/icons.svg#lightbulb_outline"></use>
-              </svg>
+            <div class="table__icon" data-category="{{category}}">
             </div>
             <div class="table__text">{{name}}</div>
           </div>
@@ -25,13 +22,10 @@
         <th>
           <div id="note-ctrl-btns"  class="table__thumb table__thumb--buttons" data-id={{id}}>
             <button type="button" class="table__button" name="edit">
-                <i class="fa-solid fa-pen fa-lg"></i>
             </button>
-            <button type="button" class="table__button" name="archive">
-                <i class="fa-solid fa-box-archive fa-lg"></i>
+            <button type="button" class="table__button" name="to-archive">
             </button>
             <button type="button" class="table__button" name="remove">
-                <i class="fa-solid fa-trash fa-lg"></i>
             </button>
           </div>
         </th>
