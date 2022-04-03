@@ -1,0 +1,51 @@
+:root{
+    --thead-txt-color:rgb(255, 255, 255);
+    --thead-font-weight:700;
+    --tbody-txt-color:rgb(131, 131, 131);
+    --tbody-name-txt-color:rgb(0, 0, 0);
+    --tbody-font-weight:500;
+    --thead-bg-color:rgb(168, 165, 165);
+    --trow-bg-color:rgba(187, 230, 230, 0.2);
+    --button-bg-color:transparent;
+    --thead-height:40px;
+    --tbody-height:50px;
+    --thead-th-height:var(--thead-height);
+    --tbody-th-height:var(--tbody-height);
+    --th-padding:5px 10px;
+    --button-width:30px;
+    --button-height:30px;
+    --button-border:none;
+    --hover-button-scale:1.2;
+    --transition-delay:250ms;
+    --transition-func:linear;
+
+    --icon-col-width:60px;
+    --name-col-width:230px;
+    --created-col-width:140px;
+    --category-col-width:180px;
+    --content-col-width:300px;
+    --dates-col-width:180px;
+    --buttons-col-width:110px;
+    --note-category-col-width:360px;
+    --active-col-width:300px;
+    --archived-col-width:480px;
+
+    --tbody-row-margin:6px 0 0 0;
+    --first-row-border-radius:6px 0 0 6px;
+    --last-row-border-radius:0 6px 6px 0;
+
+    --category-icon-thumb-width:40px;
+    --category-icon-thumb-height: 40px;
+    --category-icon-width:25px;
+    --category-icon-height: 25px;
+    --category-icon-bg-color:rgb(100, 100, 100);
+    --category-icon-color:rgb(255, 255, 255);
+    --category-icon-border-radius:50%;
+
+    --table-width:100%;
+    --table-border-spacing:0;
+    --table-border-collapse:collapse;
+
+    --main-font-size:14px;
+    --main-line-height:1.167;
+}

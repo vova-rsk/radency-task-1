@@ -4,6 +4,8 @@
  */
 
 // Стили для файла с примером HTML-фрагмента
+@import './mixins';
+@import './variables';
 @import './common';
 @import './notes';
 @import './archive';
