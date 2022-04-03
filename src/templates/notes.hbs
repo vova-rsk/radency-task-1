@@ -6,19 +6,29 @@
           </div>
         </th>
         <th>
-          <div class="table__col-thumb table__col-thumb--name">{{name}}</div>
-          </th>
-        <th>
-          <div class="table__col-thumb table__col-thumb--created">{{created}}</div>
+          <div class="table__col-thumb table__col-thumb--name">
+            {{name}}
+          </div>
         </th>
         <th>
-          <div class="table__col-thumb table__col-thumb--category">{{category}}</div>
+          <div class="table__col-thumb table__col-thumb--created">
+            {{created}}
+          </div>
         </th>
         <th>
-          <div class="table__col-thumb table__col-thumb--content">{{content}}</div>
+          <div class="table__col-thumb table__col-thumb--category">
+            {{category}}
+          </div>
         </th>
         <th>
-          <div class="table__col-thumb table__col-thumb--dates">{{#if dates}} {{dates.[0]}}, {{dates.[1]}} {{/if}}</div>
+          <div class="table__col-thumb table__col-thumb--content">
+            {{content}}
+          </div>
+        </th>
+        <th>
+          <div class="table__col-thumb table__col-thumb--dates">
+            {{#if dates}} {{dates.[0]}}, {{dates.[1]}} {{/if}}
+          </div>
         </th>
         <th>
           <div id="note-ctrl-btns"  class="table__col-thumb table__col-thumb--buttons" data-id={{id}}>
