@@ -1,0 +1,47 @@
+<div class="notes-container">
+  <table class="table">
+    <caption id="table-notes-caption" class="table__caption">
+      Active Notes
+    </caption>
+    <thead class="table__head">
+      <tr class="table__row">
+        <th>
+          <div class="table__col-thumb table__col-thumb--first table__col-thumb--icon"></div>
+        </th>
+        <th>
+          <div class="table__col-thumb table__col-thumb--name">Name</div>
+        </th>
+        <th>
+          <div class="table__col-thumb table__col-thumb--created">Created</div>
+        </th>
+        <th>
+          <div class="table__col-thumb table__col-thumb--category">Category</div>
+        </th>
+        <th>
+          <div class="table__col-thumb table__col-thumb--content">Content</div>
+        </th>
+        <th>
+          <div class="table__col-thumb table__col-thumb--dates">Dates</div>
+        </th>
+        <th>
+          <div class="table__col-thumb table__col-thumb--last table__col-thumb--buttons">
+            <button type="button" class="table__button" name="archive">
+              <svg id="to-archive-icon" class="to-archive-icon" width="20px" height="20px">
+                <use href="./images/icons.svg#box-add"></use>
+              </svg>
+              <svg id="to-active-icon" class="to-active-icon disabled" width="20px" height="20px">
+                <use href="./images/icons.svg#box-remove"></use>
+              </svg>
+            </button>
+            <button type="button" class="table__button" name="remove">
+              <svg width="30px" height="30px">
+                <use href="./images/icons.svg#delete1"></use>
+              </svg>
+            </button>
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody id="notes-tbody" class="table__body"></tbody>
+  </table>
+</div>

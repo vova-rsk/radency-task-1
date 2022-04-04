@@ -1,0 +1,28 @@
+.modal-container {
+    margin: var(--modal-container-margin);
+
+    & .create-button{
+        display:block;
+        margin-left:auto;
+        padding:var(--create-button-padding);
+        font-weight: var(--tbody-font-weight);
+        font-size:var(--main-font-size);
+        line-height: var(--main-line-height);
+        color:var(--create-button-txt-color);
+        background-color: var(--create-button-bg-color);
+        border:1px solid var(--thead-bg-color);
+        border-radius:var(--create-button-border-radius);
+        cursor:pointer;
+        transition: color var(--transition-delay) var(--transition-func), 
+        background-color var(--transition-delay) var(--transition-func),
+        box-shadow var(--transition-delay) var(--transition-func);
+
+        &:hover{
+            color:var(--create-button-hover-txt-color);
+            background-color: var(--create-button-hover-bg-color);
+            -webkit-box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.1);
+            -moz-box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.1);
+        }
+    }
+}

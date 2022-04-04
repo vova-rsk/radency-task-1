@@ -13,17 +13,22 @@
   </head>
   <body>
     <header>
-      <include src="./partials/header.html"></include>
+      <div class="container">
+        <include src="./partials/header.html"></include>
+      </div>
     </header>
     <main>
-      <include src="./partials/notes.html"></include>
-      <!-- <include src="./partials/archive.html"></include> -->
-      <include src="./partials/summary.html"></include>
+      <div class="container">
+        <include src="./partials/notes-table.html"></include>
+        <include src="./partials/modal.html"></include>
+        <include src="./partials/summary-table.html"></include>
+      </div>
     </main>
     <footer>
-      <include src="./partials/footer.html"></include>
+      <div class="container">
+        <!-- <include src="./partials/footer.html"></include> -->
+      </div>
     </footer>
     <script src="./index.js"></script>
-    <script src="https://kit.fontawesome.com/84c63dae17.js" crossorigin="anonymous"></script>
   </body>
 </html>

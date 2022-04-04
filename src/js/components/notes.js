@@ -1,12 +1,15 @@
 import { nanoid } from 'nanoid';
-import noteTmp from '../../templates/notes.hbs';
 import summaryTmp from '../../templates/summary.hbs';
 import refs from './refs';
 import { CATEGORIES, STATUS, SVG_ICONS } from './constants';
 
-export function createActiveNotesTable(notes) {
-    const filteredNotes = notes.filter(elem => elem.status === STATUS.ACTIVE);
-    const notesList = noteTmp(filteredNotes);
+export function clearMarkup(elem) { 
+    elem.innerHTML="";
+}
+
+export function createNotesTable(notes, template, filter=STATUS.ACTIVE, ) {
+    const filteredNotes = notes.filter(elem => elem.status === filter);
+    const notesList = template(filteredNotes);
     
     refs.activeNotesTable.insertAdjacentHTML('beforeend', notesList);
 }
@@ -23,8 +26,21 @@ export function createSummaryTable(notes) {
     refs.summaryTable.insertAdjacentHTML('beforeend', summaryList);
 }
 
+export function switchTablesView() { 
+    refs.toArchiveIcon.classList.toggle('disabled');
+    refs.toActiveIcon.classList.toggle('disabled');
+    refs.summaryContainer.classList.toggle('disabled');
+    refs.modalContainer.classList.toggle('disabled');
+}
+
+export function changeTableCaption(targetToSwitch) {
+    refs.tableCaption.textContent = (targetToSwitch === STATUS.ARCHIVED) ? 'Archive' : 'Active Notes'; 
+}
+
+
+
 function addCategoryIcons () { 
-    const categoryIcons = refs.getCategoryIcons();
+    const categoryIcons = document.querySelectorAll('.table__icon');
     
     categoryIcons.forEach(icon => {
         const category = icon.dataset.category;
@@ -35,7 +51,7 @@ function addCategoryIcons () {
 }
 
 function addCtrButtonsIcons() { 
-    const buttons = refs.getNoteCtrlButtons();
+    const buttons = document.querySelectorAll('#note-ctrl-btns button');
 
     buttons.forEach(button => { 
         const buttonName = button.getAttribute('name');
@@ -47,6 +63,9 @@ function addCtrButtonsIcons() {
                 break;
             case 'to-archive':
                 iconToAdd = SVG_ICONS.BOX_ADD;
+                break;
+            case 'to-active':
+                iconToAdd = SVG_ICONS.BOX_REMOVE;
                 break;
             case 'remove':
                 iconToAdd = SVG_ICONS.DELETE;
@@ -68,7 +87,7 @@ function getSummary(notes) {
             return summary;
         }
 
-        summary.push({ id: nanoid(7), category, [status]: 1 });
+        summary.push({ id: nanoid(7), category, active:0, archived:0, [status]: 1 });
 
         return summary;
     }, []);

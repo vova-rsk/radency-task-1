@@ -1,0 +1,44 @@
+{{#each this}}
+      <tr class="table__row">
+        <th>
+          <div class="table__col-thumb table__col-thumb--icon">
+            <div class="table__icon" data-category="{{category}}"></div>
+          </div>
+        </th>
+        <th>
+          <div class="table__col-thumb table__col-thumb--name">
+            {{name}}
+          </div>
+        </th>
+        <th>
+          <div class="table__col-thumb table__col-thumb--created">
+            {{created}}
+          </div>
+        </th>
+        <th>
+          <div class="table__col-thumb table__col-thumb--category">
+            {{category}}
+          </div>
+        </th>
+        <th>
+          <div class="table__col-thumb table__col-thumb--content">
+            {{content}}
+          </div>
+        </th>
+        <th>
+          <div class="table__col-thumb table__col-thumb--dates">
+            {{#if dates}} {{dates.[0]}}, {{dates.[1]}} {{/if}}
+          </div>
+        </th>
+        <th>
+          <div id="note-ctrl-btns"  class="table__col-thumb table__col-thumb--buttons" data-id={{id}}>
+            <button type="button" class="table__button" name="edit">
+            </button>
+            <button type="button" class="table__button" name="to-active">
+            </button>
+            <button type="button" class="table__button" name="remove">
+            </button>
+          </div>
+        </th>
+      </tr>
+{{/each}}

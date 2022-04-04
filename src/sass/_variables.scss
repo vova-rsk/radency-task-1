@@ -18,7 +18,6 @@
     --hover-button-scale:1.2;
     --transition-delay:250ms;
     --transition-func:linear;
-
     --icon-col-width:60px;
     --name-col-width:230px;
     --created-col-width:140px;
@@ -29,11 +28,9 @@
     --note-category-col-width:360px;
     --active-col-width:300px;
     --archived-col-width:480px;
-
     --tbody-row-margin:6px 0 0 0;
     --first-row-border-radius:6px 0 0 6px;
     --last-row-border-radius:0 6px 6px 0;
-
     --category-icon-thumb-width:40px;
     --category-icon-thumb-height: 40px;
     --category-icon-width:25px;
@@ -41,11 +38,16 @@
     --category-icon-bg-color:rgb(100, 100, 100);
     --category-icon-color:rgb(255, 255, 255);
     --category-icon-border-radius:50%;
-
     --table-width:100%;
     --table-border-spacing:0;
     --table-border-collapse:collapse;
-
     --main-font-size:14px;
     --main-line-height:1.167;
+    --modal-container-margin: 20px 0 80px;
+    --create-button-padding:4px 8px;
+    --create-button-txt-color:rgb(0, 0, 0);
+    --create-button-border-radius:6px;
+    --create-button-bg-color:rgba(187, 230, 230, 0.2);
+    --create-button-hover-txt-color:rgb(255, 255, 255);
+    --create-button-hover-bg-color:rgb(168, 165, 165);
 }

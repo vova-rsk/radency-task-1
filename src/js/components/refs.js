@@ -1,8 +1,12 @@
 const refs = {
     activeNotesTable: document.querySelector('#notes-tbody'),
     summaryTable: document.querySelector('#summary-tbody'),
-    getCategoryIcons: () => document.querySelectorAll('.table__icon'),
-    getNoteCtrlButtons: () => document.querySelectorAll('#note-ctrl-btns button')
+    navButtonsContainer: document.querySelector('.nav-buttons'),
+    toArchiveIcon: document.querySelector('#to-archive-icon'),
+    toActiveIcon: document.querySelector('#to-active-icon'),
+    summaryContainer: document.querySelector('.summary-container'),
+    modalContainer: document.querySelector('.modal-container'),
+    tableCaption:document.querySelector('#table-notes-caption')
 };
 
 export default refs
