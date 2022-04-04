@@ -1,4 +1,3 @@
-import { nanoid } from 'nanoid';
 import store from '../../db';
 import summaryTmp from '../../templates/summary.hbs';
 import refs from './refs';
@@ -10,7 +9,7 @@ export function clearMarkup(elem) {
     elem.innerHTML="";
 }
 
-export function createNotesTable(notes, template, filter=STATUS.ACTIVE, ) {
+export function createNotesTable(notes, template, filter = STATUS.ACTIVE,) {
     const filteredNotes = notes.filter(elem => elem.status === filter);
     const notesList = template(filteredNotes);
     
@@ -32,7 +31,6 @@ export function createSummaryTable(notes) {
 export function switchTablesView() { 
     refs.toArchiveIcon.classList.toggle('disabled');
     refs.toActiveIcon.classList.toggle('disabled');
-    refs.summaryContainer.classList.toggle('disabled');
     refs.modalContainer.classList.toggle('disabled');
 }
 
@@ -103,18 +101,15 @@ function addCtrButtonsIcons() {
 }
 
 function getSummary(notes) {
+    const initValue = CATEGORIES.map(({ id, name, icon }) => ({ id, category: name, icon, active: 0, archived: 0 }));
+
     return notes.reduce((summary, { category, status }) => {
         const entity = summary.find(item => item.category === category);
 
-        if (entity) { 
-            entity[status] += 1;
-            return summary;
-        }
-
-        summary.push({ id: nanoid(7), category, active:0, archived:0, [status]: 1 });
+        entity[status] += 1;
 
         return summary;
-    }, []);
+    }, initValue);
 }
 
 function deactivateLink(clickedButtonName) { 
@@ -127,4 +122,54 @@ function deactivateLink(clickedButtonName) {
             button.removeAttribute('disabled');
         }
     });
+}
+
+export function onDeleteOneButtonClick(e) {
+    if (e.target.nodeName !== 'BUTTON') { 
+        return;
+    }
+
+    const operationType = e.target.name;
+    const noteId = e.target.dataset.id;
+    const tableRowToRemoveRef = refs.notesTable.querySelector(`.table__row[data-id="${noteId}"]`);
+
+    if (operationType === 'remove') {
+        const { status, category } = store.notes.find(note => note.id === noteId);
+        
+        store.notes = store.notes.filter(note => note.id !== noteId);
+        
+        tableRowToRemoveRef.remove();
+        updateSummaryAfterRemove(status, category)
+    } else if (operationType === 'to-archive' || operationType === 'to-active') {
+        const noteToUpdate = store.notes.find(note => note.id === noteId);
+        const { category } = noteToUpdate;
+        noteToUpdate.status = operationType === 'to-archive' ? STATUS.ARCHIVED : STATUS.ACTIVE;
+
+        tableRowToRemoveRef.remove();
+        summaryAfterReplace(operationType, category)
+    }   
+}
+
+function updateSummaryAfterRemove(noteStatus, category) {
+    const activeRef = refs.summaryTable.querySelector(`.table__col-thumb--active[data-category="${category}"]`);
+    const archivedRef = refs.summaryTable.querySelector(`.table__col-thumb--archived[data-category="${category}"]`);
+
+    if (noteStatus === STATUS.ACTIVE) {
+        activeRef.textContent -= 1;
+    } else { 
+        archivedRef.textContent -= 1;
+    }
+}
+
+function summaryAfterReplace(operationType, category){ 
+    const activeRef = refs.summaryTable.querySelector(`.table__col-thumb--active[data-category="${category}"]`);
+    const archivedRef = refs.summaryTable.querySelector(`.table__col-thumb--archived[data-category="${category}"]`);
+
+    if (operationType === 'to-archive') {
+        activeRef.textContent -= 1;
+        archivedRef.textContent = Number(archivedRef.textContent) + 1;
+    } else { 
+        activeRef.textContent =  Number(activeRef.textContent) + 1;
+        archivedRef.textContent -= 1;
+    }
 }

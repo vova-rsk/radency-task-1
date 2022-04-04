@@ -38,7 +38,7 @@
     background-color:var(--category-icon-bg-color);
     border-radius:var(--category-icon-border-radius);
 
-    & svg{
+    & svg {
         width:var(--category-icon-width);
         height:var(--category-icon-height);
     }
@@ -131,6 +131,14 @@
     }
 }
 
+.table__caption{
+    font-weight:700;
+}
+
 .disabled {
     display:none;
+}
+
+svg {
+    pointer-events: none;
 }

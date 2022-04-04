@@ -1,5 +1,5 @@
 {{#each this}}
-      <tr class="table__row">
+      <tr class="table__row" data-id={{id}}>
         <th>
           <div class="table__col-thumb table__col-thumb--icon">
             <div class="table__icon" data-category="{{category}}"></div>
@@ -31,12 +31,14 @@
           </div>
         </th>
         <th>
-          <div id="note-ctrl-btns"  class="table__col-thumb table__col-thumb--buttons" data-id={{id}}>
-            <button type="button" class="table__button" name="edit">
+          <div id="note-ctrl-btns"  class="table__col-thumb table__col-thumb--buttons" >
+            <button type="button" class="table__button" name="edit" data-id={{id}}>
             </button>
-            <button type="button" class="table__button" name="to-archive">
+            <button type="button" class="table__button table__button--archive" name="to-archive" data-id={{id}}>
             </button>
-            <button type="button" class="table__button" name="remove">
+            {{!-- <button type="button" class="table__button table__button--to-active disabled" name="to-archive" data-id={{id}}>
+            </button> --}}
+            <button type="button" class="table__button" name="remove" data-id={{id}}>
             </button>
           </div>
         </th>

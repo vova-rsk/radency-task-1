@@ -2,7 +2,8 @@ import {
     createNotesTable,
     addIcons,
     createSummaryTable,
-    onNavButtonClick
+    onNavButtonClick,
+    onDeleteOneButtonClick
 } from './components/notes';
 import store from '../db';
 import refs from './components/refs';
@@ -15,3 +16,4 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 refs.navButtonsContainer.addEventListener('click', onNavButtonClick);
+refs.notesTable.addEventListener('click', onDeleteOneButtonClick)

@@ -1,6 +1,6 @@
 const initData = [
     {
-        id: "1",
+        id: "3edc4rf",
         name: "Shopping list",
         created: "April 20, 2021",
         category: "Task",
@@ -9,7 +9,7 @@ const initData = [
         status: "active",
     },
     {
-        id: "2",
+        id: "7ujm9ij",
         name: "The theory of evolution",
         created: "April 27, 2021",
         category: "Random Thought",
@@ -18,7 +18,7 @@ const initData = [
         status: "active",
     },
     {
-        id: "3",
+        id: "2w4r7u8",
         name: "New Feature",
         created: "May 05, 2021",
         category: "Idea",
@@ -27,7 +27,7 @@ const initData = [
         status: "active",
     },
     {
-        id: "4",
+        id: "0hceqad",
         name: "William Gaddis",
         created: "May 07, 2021",
         category: "Quote",
@@ -36,7 +36,7 @@ const initData = [
         status: "active",
     },
     {
-        id: "5",
+        id: "nbvdfg9",
         name: "Books",
         created: "May 15, 2021",
         category: "Task",
@@ -45,7 +45,7 @@ const initData = [
         status: "active",
     },
     {
-        id: "6",
+        id: "ascdgbg",
         name: "Practice",
         created: "February 11, 2021",
         category: "Idea",
@@ -54,7 +54,7 @@ const initData = [
         status: "active",
     },
     {
-        id: "7",
+        id: "0pmn5tg",
         name: "Holidays",
         created: "March 3, 2022",
         category: "Random Thought",
@@ -63,7 +63,7 @@ const initData = [
         status: "active",
     },
     {
-        id: "1",
+        id: "3e876tr",
         name: "Shopping list",
         created: "April 20, 2021",
         category: "Task",

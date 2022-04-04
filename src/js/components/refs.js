@@ -6,7 +6,7 @@ const refs = {
     toActiveIcon: document.querySelector('#to-active-icon'),
     summaryContainer: document.querySelector('.summary-container'),
     modalContainer: document.querySelector('.modal-container'),
-    tableCaption:document.querySelector('#table-notes-caption')
+    tableCaption: document.querySelector('#table-notes-caption'),
 };
 
 export default refs

@@ -1,5 +1,5 @@
 {{#each this}}
-      <tr class="table__row">
+      <tr class="table__row" >
         <th>
           <div class="table__col-thumb table__col-thumb--icon">
             <div class="table__icon" data-category="{{category}}"></div>
@@ -11,12 +11,12 @@
           </div>
           </th>
         <th>
-          <div class="table__col-thumb table__col-thumb--active">
+          <div class="table__col-thumb table__col-thumb--active" data-category="{{category}}">
             {{active}}
           </div>
         </th>
         <th>
-          <div class="table__col-thumb table__col-thumb--last table__col-thumb--archived">
+          <div class="table__col-thumb table__col-thumb--last table__col-thumb--archived" data-category="{{category}}">
             {{archived}}
           </div>
         </th>
