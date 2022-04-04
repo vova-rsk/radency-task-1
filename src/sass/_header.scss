@@ -1,0 +1,10 @@
+.nav-button{
+    background-color: transparent;
+    border:none;
+    text-decoration: underline;
+    cursor:pointer;
+}
+
+.nav-button:not(:last-child) {
+    margin-right:10px;
+}
