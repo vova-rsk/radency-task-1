@@ -14,7 +14,7 @@ export function createNotesTable(notes, template, filter=STATUS.ACTIVE, ) {
     const filteredNotes = notes.filter(elem => elem.status === filter);
     const notesList = template(filteredNotes);
     
-    refs.activeNotesTable.insertAdjacentHTML('beforeend', notesList);
+    refs.notesTable.insertAdjacentHTML('beforeend', notesList);
 }
 
 export function addIcons() {
@@ -48,7 +48,7 @@ export function onNavButtonClick(e) {
     const buttonName = e.target.name;
 
     deactivateLink(buttonName);
-    clearMarkup(refs.activeNotesTable);
+    clearMarkup(refs.notesTable);
     
     if (buttonName === "to-archive") {
         changeTableCaption(STATUS.ARCHIVED)

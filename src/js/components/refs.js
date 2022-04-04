@@ -1,5 +1,5 @@
 const refs = {
-    activeNotesTable: document.querySelector('#notes-tbody'),
+    notesTable: document.querySelector('#notes-tbody'),
     summaryTable: document.querySelector('#summary-tbody'),
     navButtonsContainer: document.querySelector('.nav-buttons'),
     toArchiveIcon: document.querySelector('#to-archive-icon'),
