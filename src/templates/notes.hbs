@@ -31,15 +31,19 @@
           </div>
         </th>
         <th>
-          <div id="note-ctrl-btns"  class="table__col-thumb table__col-thumb--buttons" >
+          <div class="table__col-thumb table__col-thumb--buttons note-ctrl-btns" >
             <button type="button" class="table__button" name="edit" data-id={{id}}>
             </button>
             <button type="button" class="table__button table__button--archive" name="to-archive" data-id={{id}}>
             </button>
-            {{!-- <button type="button" class="table__button table__button--to-active disabled" name="to-archive" data-id={{id}}>
-            </button> --}}
             <button type="button" class="table__button" name="remove" data-id={{id}}>
-            </button>
+            </button>                
+            <div class="checkbox-container visually-hidden">
+              <label>
+                <input type="checkbox" />
+                <span></span>
+              </label>              
+            </div>
           </div>
         </th>
       </tr>

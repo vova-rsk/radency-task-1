@@ -24,7 +24,28 @@
           <div class="table__col-thumb table__col-thumb--dates">Dates</div>
         </th>
         <th>
-          <div class="table__col-thumb table__col-thumb--last table__col-thumb--buttons">
+          <div
+            id="header-ctrl-buttons"
+            class="table__col-thumb table__col-thumb--last table__col-thumb--buttons"
+          >
+            <button
+              type="button"
+              class="table__button table__button--apply visually-hidden"
+              name="apply"
+            >
+              <svg class="to-archive-icon" width="20px" height="20px">
+                <use href="./images/icons.svg#check"></use>
+              </svg>
+            </button>
+            <button
+              type="button"
+              class="table__button table__button--cancel visually-hidden"
+              name="cancel"
+            >
+              <svg class="to-archive-icon" width="20px" height="20px">
+                <use href="./images/icons.svg#clear"></use>
+              </svg>
+            </button>
             <button type="button" class="table__button" name="archive">
               <svg id="to-archive-icon" class="to-archive-icon" width="20px" height="20px">
                 <use href="./images/icons.svg#box-add"></use>

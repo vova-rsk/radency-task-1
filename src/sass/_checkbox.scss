@@ -1,0 +1,34 @@
+.checkbox-container{
+
+    & label:hover {
+        cursor: pointer;
+    }
+
+    label>input[type=checkbox] {
+        display: none;
+    }
+
+    & label>input[type=checkbox]+span {
+        width: 20px;
+        height: 20px;
+        border: solid 1px #ccc;
+        display: inline-block;
+    }
+
+    & label>input[type=checkbox]+span:before {
+        content: '\2713';
+        color: transparent;
+        display: block;
+        text-align: center;
+    }
+
+    & label>input[type=checkbox]:checked+span:before {
+        color: black;
+    }
+
+    & label>input[type=checkbox]+span+span {
+        user-select: none;
+    }
+
+}
+
