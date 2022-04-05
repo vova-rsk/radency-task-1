@@ -4,10 +4,10 @@ export default function addCtrlButtonsIcons() {
     const buttons = document.querySelectorAll('.note-ctrl-btns button');
 
     buttons.forEach(button => { 
-        const buttonName = button.getAttribute('name');
+        const iconType = button.dataset.icon;
         let iconToAdd = null;
 
-        switch (buttonName) { 
+        switch (iconType) { 
             case 'edit':
                 iconToAdd = SVG_ICONS.EDIT;
                 break;

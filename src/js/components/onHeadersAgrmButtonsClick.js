@@ -1,6 +1,7 @@
 import refs from './refs';
-import removeNotesMarkup from './removeNotesMarkup';
+import removeMarkup from './removeMarkup';
 import updateStoreData from './updateStoreData';
+import updateSummaryMarkup from './updateSummaryMarkup';
 
 export default function onHeaderAgrmButtonsClick(e) {
     const clickedElem = e.target;
@@ -21,8 +22,9 @@ export default function onHeaderAgrmButtonsClick(e) {
         const notesIdList = checkedNotes.map(note => note.dataset.id);
         const operationType = clickedElem.dataset.operation;
 
-        removeNotesMarkup(checkedNotes);
+        removeMarkup(checkedNotes);
         updateStoreData(operationType, notesIdList);
+        updateSummaryMarkup();
     }   
 
     checkboxes.forEach(checkbox => checkbox.classList.add('visually-hidden'));
