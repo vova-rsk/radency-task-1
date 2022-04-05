@@ -1,7 +1,7 @@
+import createSummaryTable from './createSummaryTable';
 import refs from './refs';
 import removeMarkup from './removeMarkup';
 import updateStoreData from './updateStoreData';
-import updateSummaryMarkup from './updateSummaryMarkup';
 
 export default function onHeaderAgrmButtonsClick(e) {
     const clickedElem = e.target;
@@ -24,7 +24,7 @@ export default function onHeaderAgrmButtonsClick(e) {
 
         removeMarkup(checkedNotes);
         updateStoreData(operationType, notesIdList);
-        updateSummaryMarkup();
+        createSummaryTable()
     }   
 
     checkboxes.forEach(checkbox => checkbox.classList.add('visually-hidden'));

@@ -7,7 +7,7 @@ import addCtrlButtonsIcons from "./addCtrlButtonsIcons";
 
 export default function onStartup() { 
     createNotesTable(store.notes, noteTmp);
-    createSummaryTable(store.notes);
+    createSummaryTable();
     addCategoryIcons();
     addCtrlButtonsIcons();
 }

@@ -1,8 +1,7 @@
 import refs from './refs';
 import removeMarkup from './removeMarkup';
 import updateStoreData from './updateStoreData';
-import updateSummaryMarkup from './updateSummaryMarkup';
-
+import createSummaryTable from './createSummaryTable';
 
 export default function onNoteCtrlButtonClick(e) {
     if (e.target.nodeName !== 'BUTTON') { 
@@ -15,5 +14,5 @@ export default function onNoteCtrlButtonClick(e) {
 
     updateStoreData(operationType, noteId);
     removeMarkup(tableRowToRemoveRef);
-    updateSummaryMarkup();
+    createSummaryTable();
 }
