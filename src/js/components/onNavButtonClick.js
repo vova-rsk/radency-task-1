@@ -6,6 +6,7 @@ import changeTableCaption from './changeTableCaption';
 import switchTablesView from './switchTablesView';
 import createNotesTable from './createNotesTable';
 import { STATUS } from './constants';
+import changeSummaryVisibility from './changeSummaryVisibility';
 
 export default function onNavButtonClick(e) {
     if (e.target.nodeName !== "BUTTON") { 
@@ -26,4 +27,6 @@ export default function onNavButtonClick(e) {
         switchTablesView();
         createNotesTable(store.notes, STATUS.ACTIVE);
     }
+
+    changeSummaryVisibility();
 }
