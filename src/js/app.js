@@ -4,9 +4,11 @@ import onHeaderAgreementButtonsClick from './components/onHeadersAgrmButtonsClic
 import onNoteCtrlButtonClick from './components/onNoteCtrlButtonClick';
 import onNavButtonClick from './components/onNavButtonClick';
 import onStartup from './components/onStartup';
+import onCreateNoteButtonClick from './components/onCreateNoteButtonClick';
 
 document.addEventListener('DOMContentLoaded', onStartup);
 refs.navButtonsContainer.addEventListener('click', onNavButtonClick);
 refs.notesTable.addEventListener('click', onNoteCtrlButtonClick);
 refs.headerCtrlButtonsContainer.addEventListener('click', onHeaderCtrlButtonsClick);
 refs.headerCtrlButtonsContainer.addEventListener('click', onHeaderAgreementButtonsClick);
+refs.createButton.addEventListener('click', onCreateNoteButtonClick);

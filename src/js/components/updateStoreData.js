@@ -1,7 +1,8 @@
+import { nanoid } from "nanoid";
 import store from '../../db';
 import { STATUS, OPERATION_TYPE } from './constants';
 
-export default function updateStoreData(operationType, notesIdList, noteData) { 
+export default function updateStoreData(operationType, notesIdList, noteData) {
     const ids = Array.isArray(notesIdList) ? [...notesIdList] : notesIdList;
 
     if (operationType === OPERATION_TYPE.REMOVE) {
@@ -9,21 +10,34 @@ export default function updateStoreData(operationType, notesIdList, noteData) {
         return;
     }
 
-    if (operationType === OPERATION_TYPE.ARCHIVE) { 
-        store.notes = store.notes.map(note => { 
+    if (operationType === OPERATION_TYPE.ARCHIVE) {
+        store.notes = store.notes.map(note => {
 
-            if (!ids.includes(note.id)) { 
+            if (!ids.includes(note.id)) {
                 return note;
             }
-            console.log(note.status);
 
             const newStatus = note.status === STATUS.ACTIVE
                 ? STATUS.ARCHIVED
                 : STATUS.ACTIVE;
-            console.log(newStatus);
+
             return { ...note, status: newStatus };
         });
     }
-    console.log([...store.notes])
-    // реализовать операции при редактировании
+
+    if (operationType === OPERATION_TYPE.EDIT) {
+        const targetIdx = store.notes.findIndex(note => note.id === ids);
+        
+        store.notes[targetIdx] = { ...store.notes[targetIdx], ...noteData };
+        
+        return store.notes[targetIdx];
+    }
+
+    if (operationType === OPERATION_TYPE.ADD) {
+        const id = nanoid(7);
+        store.notes.push({ id , ...noteData });
+
+        return store.notes[store.notes.length-1];
+    }
+
 }

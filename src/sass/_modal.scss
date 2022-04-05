@@ -1,5 +1,13 @@
 .modal-container {
+    position:relative;
+    @include flex(row,end,start);
     margin: var(--modal-container-margin);
+    height:100px;
+    overflow:hidden;
+
+    &.disabled{
+        display:none;
+    }
 
     & .create-button{
         display:block;
@@ -25,4 +33,123 @@
             box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.1);
         }
     }
+}
+
+.modal{  
+    position:absolute;
+    top:-100%;
+    left:0;     
+    width:1050px;
+    transition:transform var(--transition-delay) var(--transition-func);
+}
+
+.modal.show {
+    transform:translateY(110%);
+}
+
+.form{     
+    display:flex;
+    flex-direction:row;
+    background-color: var(--trow-bg-color);
+    padding:3px;
+    border-radius:16px;
+
+    & .form__container {
+        padding:4px 10px;
+    }
+
+    & .form__container:first-child{
+        width:950px;
+    }
+
+    & .form__container:last-child {
+        @include flex(row, space-between, center)
+    }
+
+    & .form__inputs-thumb{
+        padding:2px 20px;
+       width:950px;
+    }
+
+
+    & .form__inputs-thumb{
+        @include flex(row,left, center);
+    }
+
+    & .form__inputs-thumb:first-child {
+        & .form__label:last-child{
+            margin-left:80px;
+        }
+    }
+
+    & .form__inputs-thumb:last-child{
+          margin-top:10px;
+    }
+
+    & .form__button{
+      @include flex(row,center, center); 
+      padding:2px; 
+      background-color:transparent;
+      border:none;
+      cursor:pointer;
+
+      &:hover{
+          transform: scale(1.2);
+      }
+    }
+
+    & .form__button:last-child{
+        margin-left:8px;
+    }
+
+    & .form__select {
+        width: 300px;
+        height: 30px;
+    }
+
+    .form__select-option{
+        padding:2px 4px;
+        width:100%;
+        min-height:20px;
+    }
+
+    & .form__input {
+        padding:2px 10px;
+        height:30px;
+    }
+
+    & .form__input--name{
+        width:300px;
+    }
+
+    & .form__input--contant{
+        width:800px;
+    }
+
+    & .form__label{
+            font-weight:500;
+            font-size:var(--main-font-size);
+            line-height:var(--main-line-height);
+            text-align: start;
+    }
+
+    & .form__select-options > span{
+        display:inline-block;
+        padding:2px 20px;
+        text-align:start;
+        font-weight:400;
+        font-size:14px;
+        line-height:1.167;
+        color:#000;
+    }
+
+    & .form__select {
+        padding: 2px 10px;
+        text-align: start;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 1.167;
+        color: #000;
+    }
+
 }

@@ -1,4 +1,4 @@
-import navButtonsEfficiencySwitching from './navButtonsDisabling';
+import navButtonsEfficiencySwitching from './navButtonsEfficiencySwitching';
 import refs from './refs';
 
 export default function onHeaderCtrlButtonsClick(e) {

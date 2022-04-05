@@ -1,13 +1,14 @@
 import store from "../../db";
-import noteTmp from '../../templates/notes.hbs';
 import createNotesTable from "./createNotesTable";
 import createSummaryTable from "./createSummaryTable";
 import addCategoryIcons from "./addCategoryIcons";
 import addCtrlButtonsIcons from "./addCtrlButtonsIcons";
+import makeModalFormSelect from './makeModalFormSelect';
 
 export default function onStartup() { 
-    createNotesTable(store.notes, noteTmp);
+    createNotesTable(store.notes);
     createSummaryTable();
     addCategoryIcons();
     addCtrlButtonsIcons();
+    makeModalFormSelect();
 }

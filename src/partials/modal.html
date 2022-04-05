@@ -1,3 +1,39 @@
 <div class="modal-container">
-  <button type="button" class="create-button">Create Note</button>
+  <div id="modal" class="modal">
+    <form class="form">
+      <div class="form__container">
+        <div class="form__inputs-thumb">
+          <label class="form__label">
+            Category:
+            <select id="category-select" name="category" class="form__select" required></select>
+          </label>
+          <label class="form__label">
+            Name:
+            <input type="text" name="name" class="form__input form__input--name" required />
+          </label>
+        </div>
+        <div class="form__inputs-thumb">
+          <label class="form__label form__label--content">
+            Content:
+            <input type="text" name="content" class="form__input form__input--contant" required />
+          </label>
+        </div>
+      </div>
+      <div class="form__container ctrl-buttons-container">
+        <button type="submit" name="apply" class="form__button form__button--apply">
+          <svg class="form__icon" width="30px" height="30px">
+            <use href="./images/icons.svg#check"></use>
+          </svg>
+        </button>
+        <button type="button" name="cancel" class="form__button form__button--cancel">
+          <svg class="form__icon" width="30px" height="30px">
+            <use href="./images/icons.svg#clear"></use>
+          </svg>
+        </button>
+      </div>
+    </form>
+  </div>
+  <div>
+    <button id="create-button" type="button" class="create-button">Create Note</button>
+  </div>
 </div>

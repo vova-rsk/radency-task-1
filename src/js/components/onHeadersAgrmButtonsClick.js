@@ -1,5 +1,5 @@
 import createSummaryTable from './createSummaryTable';
-import navButtonsEfficiencySwitching from './navButtonsDisabling';
+import navButtonsEfficiencySwitching from './navButtonsEfficiencySwitching';
 import refs from './refs';
 import removeMarkup from './removeMarkup';
 import updateStoreData from './updateStoreData';

@@ -6,7 +6,9 @@ export const STATUS = {
 
 export const OPERATION_TYPE = {
     REMOVE: 'remove',
-    ARCHIVE: 'archive'
+    ARCHIVE: 'archive',
+    EDIT: 'edit',
+    ADD:'add'
 };
 
 export const SVG_ICONS = {
