@@ -8,3 +8,7 @@
 .nav-button:not(:last-child) {
     margin-right:10px;
 }
+
+.nav-button.deactivated {
+    pointer-events: none;
+}

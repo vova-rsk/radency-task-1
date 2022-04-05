@@ -1,4 +1,5 @@
 import createSummaryTable from './createSummaryTable';
+import navButtonsEfficiencySwitching from './navButtonsDisabling';
 import refs from './refs';
 import removeMarkup from './removeMarkup';
 import updateStoreData from './updateStoreData';
@@ -35,5 +36,7 @@ export default function onHeaderAgrmButtonsClick(e) {
         } else {
             button.classList.remove('visually-hidden');
         }
-    });        
+    });
+    
+    navButtonsEfficiencySwitching();
 }

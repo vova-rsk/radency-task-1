@@ -1,3 +1,4 @@
+import navButtonsEfficiencySwitching from './navButtonsDisabling';
 import refs from './refs';
 
 export default function onHeaderCtrlButtonsClick(e) {
@@ -6,6 +7,8 @@ export default function onHeaderCtrlButtonsClick(e) {
     if (clickedElem.nodeName !== 'BUTTON' || ['apply', 'cancel'].includes(clickedElem.name)) { 
         return;
     }
+
+    navButtonsEfficiencySwitching()
 
     const ctrlButtons = refs.headerCtrlButtonsContainer.querySelectorAll('.table__button');
     const checkboxes = refs.notesTable.querySelectorAll('.checkbox-container');
